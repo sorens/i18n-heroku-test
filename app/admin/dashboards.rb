@@ -1,5 +1,8 @@
 ActiveAdmin::Dashboards.build do
   
+  section I18n.t "active_admin.test_string" do
+  end
+
   section I18n.t "hello" do
   end
 

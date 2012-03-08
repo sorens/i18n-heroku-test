@@ -2,6 +2,8 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  active_admin:
+    test_string: "Maybe this"
   hello: "Hello world"
   handstand:
     annotations: "Annotations"
