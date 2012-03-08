@@ -65,11 +65,11 @@ module I18nHerokuTest
   if Rails.application.config.respond_to? "locale" 
     new_locale = Rails.application.config.locale.to_sym unless Rails.application.config.locale.blank?
     if new_locale
-      I18n.locale = new_locale
       I18n.default_locale = new_locale
+      I18n.locale = new_locale
       puts "startup I18n is [#{Rails.application.config.i18n.locale}], default_locale is [#{Rails.application.config.i18n.default_locale}]"
-      Rails.application.config.i18n.locale = new_locale
       Rails.application.config.i18n.default_locale = new_locale
+      Rails.application.config.i18n.locale = new_locale
       puts "startup Rails.application.config.i18n is [#{Rails.application.config.i18n.locale}], default_locale is [#{Rails.application.config.i18n.default_locale}]"
     end
   end
