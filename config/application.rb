@@ -62,13 +62,15 @@ module I18nHerokuTest
   # This works, but can we do it without this
   # I18n.load_path += Dir[Rails.root.join('config', 'locales', '*.{rb,yml}').to_s]
   # I18n.locale = :en
-  if Rails.application.config.respond_to? "locale"
-    new_locale = Rails.application.config.locale.to_sym
-    I18n.locale = new_locale
-    I18n.default_locale = new_locale
-    puts "startup I18n is [#{Rails.application.config.i18n.locale}], default_locale is [#{Rails.application.config.i18n.default_locale}]"
-    Rails.application.config.i18n.locale = new_locale
-    Rails.application.config.i18n.default_locale = new_locale
-    puts "startup Rails.application.config.i18n is [#{Rails.application.config.i18n.locale}], default_locale is [#{Rails.application.config.i18n.default_locale}]"
+  if Rails.application.config.respond_to? "locale" 
+    new_locale = Rails.application.config.locale.to_sym unless Rails.application.config.locale.blank?
+    if new_locale
+      I18n.locale = new_locale
+      I18n.default_locale = new_locale
+      puts "startup I18n is [#{Rails.application.config.i18n.locale}], default_locale is [#{Rails.application.config.i18n.default_locale}]"
+      Rails.application.config.i18n.locale = new_locale
+      Rails.application.config.i18n.default_locale = new_locale
+      puts "startup Rails.application.config.i18n is [#{Rails.application.config.i18n.locale}], default_locale is [#{Rails.application.config.i18n.default_locale}]"
+    end
   end
 end
