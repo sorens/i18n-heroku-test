@@ -67,3 +67,9 @@ The config for this heroku app
 Screen shot
 
 ![heroku](https://github.com/sorens/i18n-heroku-test/raw/master/doc/heroku01.png)
+
+##Active Admin Issue 334
+
+[https://github.com/gregbell/active_admin/issues/334](https://github.com/gregbell/active_admin/issues/334)
+
+
