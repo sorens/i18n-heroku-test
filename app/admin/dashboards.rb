@@ -1,5 +1,8 @@
 ActiveAdmin::Dashboards.build do
   
+  section I18n.t "hello" do
+  end
+
   section I18n.t "handstand.annotations" do
   end
 
