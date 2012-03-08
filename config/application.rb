@@ -59,9 +59,9 @@ module I18nHerokuTest
     config.locale                               = ENV['LOCALE']
   end
   
-  # This works, but can we do it without this
-  # I18n.load_path += Dir[Rails.root.join('config', 'locales', '*.{rb,yml}').to_s]
-  # I18n.locale = :en
+  # from https://github.com/gregbell/active_admin/issues/334
+  I18n.load_path += Dir[Rails.root.join('config', 'locales', '*.{rb,yml}').to_s]
+
   if Rails.application.config.respond_to? "locale" 
     new_locale = Rails.application.config.locale.to_sym unless Rails.application.config.locale.blank?
     if new_locale
