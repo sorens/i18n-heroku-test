@@ -1,25 +1,25 @@
-== Rails 3.1.1, Ruby 1.9.3, Heroku, I18n, Active Admin ==
+#Rails 3.1.1, Ruby 1.9.3, Heroku, I18n, Active Admin
 
 There is some problem with `active_admin`, `I18n` and `Heroku` where new translations that I add to be used inside of active_admin pages are not loaded by Heroku in the web app yet are visible via the console. This sample app demonstrates the problem.
 
-== Default Active Admin user
+##Default Active Admin user
 
 This app uses the default active_admin admin_user
 
     admin@example.com
     password
 
-== Active Admin 0.3.2
+##Active Admin 0.3.2
 
-I can't use later versions of Active Admin because of a bug with the `scoped_collection`. see https://github.com/gregbell/active_admin/issues/756
+I can't use later versions of Active Admin because of a bug with the `scoped_collection`. see [https://github.com/gregbell/active_admin/issues/756](https://github.com/gregbell/active_admin/issues/756)
 
-== How to Reproduce
+##How to Reproduce
 
   * Visit the heroku instance, http://i18n-heroku-test.herokuapp.com/admin
   * Login with above credentials
   * Observe that the dashboard is missing translated strings
   
-== Locally
+##Locally
 
 My local RVM setup
 
@@ -35,7 +35,7 @@ Screen shot
 
 ![local](https://github.com/sorens/i18n-heroku-test/raw/master/doc/local01.png)
 
-== Heroku
+##Heroku
 
 This shows the heroku info
 
