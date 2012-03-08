@@ -30,8 +30,8 @@ module I18nHerokuTest
     # config.time_zone = 'Central Time (US & Canada)'
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
-    # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
-    # config.i18n.default_locale = :de
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '*.{rb,yml}').to_s]
+    config.i18n.default_locale = :en
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
@@ -44,8 +44,22 @@ module I18nHerokuTest
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
-  end
 
-  I18n.load_path += Dir[Rails.root.join('config', 'locales', '*.{rb,yml}').to_s]
-  I18n.locale = :en
+    #**********************************************************************#
+    #
+    #      C O N F I G  F R O M  ENV[]
+    #
+    #**********************************************************************#
+    
+    # config values go here
+    # config.example_config_value               = ENV['EXAMPLE_CONFIG_VALUE']
+    # boolean example
+    # config.is_on_example                      = ENV.has_key?( "IS_ON_EXAMPLE" ) ? true :false
+    # hostname
+    config.locale                               = ENV['LOCALE']
+  end
+  
+  # This works, but can we do it without this
+  # I18n.load_path += Dir[Rails.root.join('config', 'locales', '*.{rb,yml}').to_s]
+  # I18n.locale = :en
 end
