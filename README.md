@@ -46,7 +46,7 @@ This shows the heroku info
     Addons:        Basic Logging, Shared Database 5MB
     Database Size: 128k
     Git URL:       git@heroku.com:i18n-heroku-test.git
-    Owner:         steve@orens.com
+    Owner:         
     Repo Size:     14M
     Slug Size:     25M
     Stack:         cedar
